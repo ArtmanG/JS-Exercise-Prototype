@@ -39,8 +39,24 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
+// step1: give function Person the two arguments (name, age)
+// step2: give the capital O Object constructor Person the three items. name, age, stomach[]. Stomach needs to be an empty array. they are for any small o object, so they need to be able to point to which every they create using this. this.name, this.age, this.stomach.
+// step3: add a prototype method function for stomach. inside the stomach, it needs to be able to eat food, function(someFood)
+// step4: the stomach can only be able to eat 10 food before its full. is it full? then what happens? if full, else what? if it's a 10 food it stops eating, if its not .push more food in.
+//
 
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = []; 
+}
+
+Person.prototype.stomach = function(someFood) {
+  if (this.stomach.length >= 10) {
+    this.stomach.length = 10;
+  } else {
+    this.stomach.push(someFood);
+  }
 }
 
 /*
